@@ -1,2 +1,2 @@
 # 14-Tech-Blog
-MVC Node Express Server hosting multiple blox
+MVC Node Express Server hosting multiple blogs
