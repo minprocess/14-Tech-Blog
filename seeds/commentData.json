@@ -1,3 +1,21 @@
 [
-    
+{
+    "id": 1,
+    "text": "Yes, MVC is important",
+    "articleId": 1,
+    "userID": 2
+    },
+    {
+    "id": 2,
+    "text": "I love authenication",
+    "articleId": 2,
+    "userId": 4
+    },
+    {
+    "id": 3,
+    "text": "I love ORM",
+    "articleId": 3,
+    "userId": 4
+    }
+        
 ]

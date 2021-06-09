@@ -12,7 +12,7 @@ Project.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-
+// One user to many articles
 User.hasMany(Article, {
   foreignKey: 'userId',
   onDelete: 'CASCADE'
@@ -21,6 +21,7 @@ Article.belongsTo(User, {
   foreignKey: 'userId'
 });
 
+// One user to many comments
 User.hasMany(Comment, {
   foreignKey: 'userId',
   onDelete: 'CASCADE'
@@ -29,6 +30,7 @@ Comment.belongsTo(User, {
   foreignKey: 'userId'
 });
 
+// One article has many comments
 Article.hasMany(Comment, {
   foreignKey: 'articleId',
   onDelete: 'CASCADE'
