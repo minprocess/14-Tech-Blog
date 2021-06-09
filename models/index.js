@@ -4,12 +4,12 @@ const Article = require('./Article');
 const Comment = require('./Comment');
 
 User.hasMany(Project, {
-  foreignKey: 'user_id',
+  foreignKey: 'userId',
   onDelete: 'CASCADE'
 });
 
 Project.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'userId'
 });
 
 // One user to many articles
