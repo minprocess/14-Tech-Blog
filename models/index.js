@@ -4,30 +4,30 @@ const Article = require('./Article');
 const Comment = require('./Comment');
 
 User.hasMany(Project, {
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
 Project.belongsTo(User, {
-  foreignKey: 'userId'
+  foreignKey: 'user_id'
 });
 
 // One user to many articles
 User.hasMany(Article, {
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 Article.belongsTo(User, {
-  foreignKey: 'userId'
+  foreignKey: 'user_id'
 });
 
 // One user to many comments
 User.hasMany(Comment, {
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 Comment.belongsTo(User, {
-  foreignKey: 'userId'
+  foreignKey: 'user_id'
 });
 
 // One article has many comments
@@ -50,4 +50,4 @@ To create a One-to-Many relationship, the hasMany and belongsTo associations are
 To create a Many-to-Many relationship, two belongsToMany calls are used together.
 */
 
-module.exports = { User, Project };
+module.exports = { User, Article, Comment, Project };
