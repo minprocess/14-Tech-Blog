@@ -32,11 +32,11 @@ Comment.belongsTo(User, {
 
 // One article has many comments
 Article.hasMany(Comment, {
-  foreignKey: 'articleId',
+  foreignKey: 'article_id',
   onDelete: 'CASCADE'
 });
 Comment.belongsTo(Article, {
-  foreignKey: 'articleId'
+  foreignKey: 'article_id'
 })
 
 
