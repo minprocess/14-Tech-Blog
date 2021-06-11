@@ -27,16 +27,20 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log("err");
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('article/:id', async (req, res) => {
+router.get('/article/:id', async (req, res) => {
   try {
-    console.log("controllers/homeRoutes.js .get('article/:id'");    
-    const projectData = await Project.findByPk(req.params.id, {
-        include: [{ model: User, attributes: ['name'] }, { model: Comment, attributes: ['text'] }],
+    console.log("controllers/homeRoutes.js .get('/article/:id'");    
+    const articleData = await Article.findByPk(req.params.id, {
+        include: [{ model: Comment, attributes: ['text'] }],
     });
+    console.log("articleData"); 
+    console.log(articleData); 
 
     const article = articleData.get({ plain: true });
 
