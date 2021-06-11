@@ -32,19 +32,20 @@ router.get('/', async (req, res) => {
 router.get('/article/:id', async (req, res) => {
   try {
     const articleData = await Article.findByPk(req.params.id, {
-        include: [{ model: Comment, attributes: ['text'] }],
+      include: [ {model: User}, {model: Comment}],
+//      include: [ {model: User, attributes: ['name']}, {model: Comment, attributes: ['text'] }],
     });
 
-    const articley = articleData.get({ plain: true });
+    const article = articleData.get({ plain: true });
 
     console.log("\n");
     console.log("controllers/homeRoutes.js .get('article/:id'");
-    console.log("articley")
-    console.log(articley);
-    console.log("\n");    
+    console.log("article")
+    console.log(article);
+    console.log("\n");
 
-    res.render('articley', {
-      ...articley,
+    res.render('article', {
+      ...article,
       logged_in: req.session.logged_in
     });
   } catch (err) {
