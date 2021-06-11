@@ -1,5 +1,5 @@
 # 14-Tech-Blog
-MVC Node Express Server hosting multiple blogs
+MVC Node Express Server hosting multiple authors/posters
 
 https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide
 1. Create Heroku app with Heroku CLI. The app will have a random name. `heroku create`
@@ -15,3 +15,8 @@ git add -A
 git commit -m "Pushing to Heroku"
 git push heroku main
 ````
+
+![homepage](/assets/homepage-snapshot.png)  
+<br>
+<br>
+![article 1](/assets/article-1-page-snapshot.png)  

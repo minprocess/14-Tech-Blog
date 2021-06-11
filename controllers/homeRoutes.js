@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Article, User } = require('../models');
+const { Article, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -15,11 +15,7 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const articles = articleData.map((project) => project.get({ plain: true }));
-
-    console.log("\n");
-    console.log("controllers/api/homeRoutes.js .get('/'");
-    console.log("\n");
+    const articles = articleData.map((article) => article.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -35,25 +31,25 @@ router.get('/', async (req, res) => {
 
 router.get('/article/:id', async (req, res) => {
   try {
-    console.log("controllers/homeRoutes.js .get('/article/:id'");    
     const articleData = await Article.findByPk(req.params.id, {
         include: [{ model: Comment, attributes: ['text'] }],
     });
-    console.log("articleData"); 
-    console.log(articleData); 
 
-    const article = articleData.get({ plain: true });
+    const articley = articleData.get({ plain: true });
 
     console.log("\n");
     console.log("controllers/homeRoutes.js .get('article/:id'");
-    console.log(article);
+    console.log("articley")
+    console.log(articley);
     console.log("\n");    
 
-    res.render('article', {
-      ...article,
+    res.render('articley', {
+      ...articley,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log("err");
+    console.log(err)
     res.status(500).json(err);
   }
 });
