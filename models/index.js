@@ -6,29 +6,29 @@ const Comment = require('./Comment');
 
 // One user to many articles
 User.hasMany(Article, {
-  foreignKey: 'user_id',
+  //foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 Article.belongsTo(User, {
-  foreignKey: 'user_id'
+  //foreignKey: 'user_id'
 });
 
 // One user to many comments
 User.hasMany(Comment, {
-  foreignKey: 'user_id',
+  //foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 Comment.belongsTo(User, {
-  foreignKey: 'user_id'
+  //foreignKey: 'user_id'
 });
 
 // One article has many comments
 Article.hasMany(Comment, {
-  foreignKey: 'article_id',
+  //foreignKey: 'article_id',
   onDelete: 'CASCADE'
 });
 Comment.belongsTo(Article, {
-  foreignKey: 'article_id'
+  //foreignKey: 'article_id'
 })
 
 

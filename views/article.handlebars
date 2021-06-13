@@ -2,9 +2,21 @@
   <h2>article.handlebars</h2>
   <h2>{{title}}</h2>
   <p>{{text}}</p>
+
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Comment</h3>
+        {{#each comments}}
+        <p>{{text}}</p>
+        <p>{{user.name}}</p>
+        {{/each}}
+      </div>
+
+
+
   <!-- <p>Created by {{user.name}} on {{format_date date_created}}</p> -->
   <!-- <p>{{comments}}</p> -->
- </div>
+</div>
 
 <!--
 {

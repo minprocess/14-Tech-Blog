@@ -32,16 +32,27 @@ router.get('/', async (req, res) => {
 router.get('/article/:id', async (req, res) => {
   try {
     const articleData = await Article.findByPk(req.params.id, {
-      include: [ {model: User}, {model: Comment}],
-//      include: [ {model: User, attributes: ['name']}, {model: Comment, attributes: ['text'] }],
+      include: [ User, { model: Comment, include: [User]} ]
     });
+//      include: [ {model: User, attributes: ['n]ame'}, {model: Comment, attributes: ['text'] }],
+    //});
+
+    /*
+     include: [
+        User,
+        {
+          model: Comment,
+          include: [User],
+        },
+      ],
+    */
 
     const article = articleData.get({ plain: true });
 
     console.log("\n");
     console.log("controllers/homeRoutes.js .get('article/:id'");
     console.log("article")
-    console.log(article);
+    console.log(article.comments[0]);
     console.log("\n");
 
     res.render('article', {
@@ -84,5 +95,28 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/dashboard', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    //const project = await Project.findOne({ where: { title: 'My Title' } });
+    const articleData = await Article.findAll({ where: { user_id: req.session.user_id }
+    });
+
+    // Serialize data so the template can read it
+    const articles = articleData.map((article) => article.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('dashboard', { 
+      articles, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    console.log("err");
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;
