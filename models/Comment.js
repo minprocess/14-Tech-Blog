@@ -5,12 +5,6 @@ class Comment extends Model {}
 
 Comment.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     text: {
       type: DataTypes.STRING,
     },
@@ -28,20 +22,18 @@ Comment.init(
     },
     article_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'article',
-        key: 'id',
-      },
     },
-
   },
   {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'comment',
+    sequelize
   }
 );
 
 module.exports = Comment;
+
+/*
+      references: {
+        model: 'article',
+        key: 'id',
+      },
+*/

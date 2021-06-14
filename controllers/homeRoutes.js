@@ -49,12 +49,6 @@ router.get('/article/:id', async (req, res) => {
 
     const article = articleData.get({ plain: true });
 
-    console.log("\n");
-    console.log("controllers/homeRoutes.js .get('article/:id'");
-    console.log("article")
-    console.log(article.comments[0]);
-    console.log("\n");
-
     res.render('article', {
       ...article,
       logged_in: req.session.logged_in

@@ -1,3 +1,12 @@
+:root {
+  --primary: #ccdad1;
+  --secondary: #9caea9;
+  --tertiary: #788585;
+  --light-dark: #6f6866;
+  --dark: #38302e;
+  --border-radius: .3rem;
+}
+
 header, .article:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
@@ -24,7 +33,7 @@ header, .article:not(:last-child) {
 }
 
 nav {
-  background: #0082e6;
+  background: var(--dark);
   height: 80px;
   width: 100%;
 }
