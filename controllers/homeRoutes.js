@@ -97,7 +97,16 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', async (req, res) => {
+  console.log("dashboard req.session.user_id", req.session.user_id);
   try {
+    const user = await User.findOne({where: {id: req.session.user_id }
+    });
+    //const user = userData.map((user) => user.get({ plain: true }));
+
+    let username = user.name
+    console.log("user")
+    console.log(username)
+
     // Get all projects and JOIN with user data
     //const project = await Project.findOne({ where: { title: 'My Title' } });
     const articleData = await Article.findAll({ where: { user_id: req.session.user_id }
@@ -105,11 +114,14 @@ router.get('/dashboard', async (req, res) => {
 
     // Serialize data so the template can read it
     const articles = articleData.map((article) => article.get({ plain: true }));
+    console.log("\n");
+    console.log("\n");
+    console.log("articles")
+    console.log(articles)
 
     // Pass serialized data and session flag into template
     res.render('dashboard', { 
-      articles, 
-      logged_in: req.session.logged_in 
+      articles, username
     });
   } catch (err) {
     console.log("err");

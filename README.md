@@ -19,4 +19,7 @@ git push heroku main
 ![homepage](/assets/homepage-snapshot.png)  
 <br>
 <br>
+![Dashboard of Xandromus with his posts](/assets/dashboard-of-Xandromus.png)
+<br>
+<br>
 ![article 1](/assets/article-1-page-snapshot.png)  
