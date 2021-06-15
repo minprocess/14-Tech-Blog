@@ -8,8 +8,10 @@
     <p>Created by {{article.user.name}} on {{format_date article.date_created}}</p>
     <div style="border-color: grey; background-color: #ffc7e3">
       {{#each article.Comments as |comment| }}
-        <p>Comment</p>
+      <div style="border-color:aquamarine;">
         <p>{{comment.text}}</p>
+        <p>{{comment.User.name}}</p>
+      </div>
       {{/each}}
 
     </div>
