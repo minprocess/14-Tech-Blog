@@ -18,7 +18,11 @@ git add -A
 git commit -m "Pushing to Heroku"
 git push heroku main
 ````
-
+<br>
+<br>
+![Data model showing relationships between articles, users and comments](/assets/data-model.png)
+<br>
+<br>
 ![homepage](/assets/homepage-snapshot.png)  
 <br>
 <br>
