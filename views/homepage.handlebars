@@ -8,7 +8,7 @@
     <p>Created by {{article.user.name}} on {{format_date article.date_created}}</p>
     <div style="border-color: grey; background-color: #ffc7e3">
       {{#each article.Comments as |comment| }}
-      <div style="border-color:aquamarine;">
+      <div style="border-color:aquamarine; border-width: medium; border-style: solid;">
         <p>{{comment.text}}</p>
         <p>{{comment.User.name}}</p>
       </div>
