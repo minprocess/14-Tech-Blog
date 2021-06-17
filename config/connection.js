@@ -5,6 +5,8 @@ let sequelize;
 
 if (process.env.JAWSDB_URL) {
   console.log("connection.js jawsdb")
+  console.log(process.env.JAWSDB_URL)
+  console.log("\n\n");
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   console.log("new sequelize on local pc")
