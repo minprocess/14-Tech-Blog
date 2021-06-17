@@ -6,6 +6,8 @@ MVC Node Express Server hosting multiple a group blog
 
 https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide
 1. Create Heroku app with Heroku CLI. The app will have a random name. `heroku create`
+https://tech-blog-2542.herokuapp.com/
+
 https://guarded-caverns-32673.herokuapp.com/ | https://git.heroku.com/guarded-caverns-32673.git
 2. check with git remote -v
 heroku  https://git.heroku.com/guarded-caverns-32673.git (fetch)
