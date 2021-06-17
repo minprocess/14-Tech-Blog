@@ -3,9 +3,11 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.TECH_BLOG_JAWSDB) {
-  sequelize = new Sequelize(process.env.TECH_BLOG_JAWSDB);
+if (process.env.JAWSDB_URL) {
+  console.log("connection.js jawsdb")
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
+  console.log("new sequelize on local pc")
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
