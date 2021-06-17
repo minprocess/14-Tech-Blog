@@ -23,13 +23,7 @@ const userData = [
     }    
 ];
 
-try {
-    const seedUsers = () => User.bulkCreate(userData);
-}
-catch (err) {
-    console.log("User.bulkCreate err");
-    console.log(err);
-    process.exit(0);
-  }
+const seedUsers = () => User.bulkCreate(userData);
+
 
 module.exports = seedUsers;
