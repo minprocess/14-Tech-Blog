@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
+    console.log("homeroutes.js get('/'")
     // Get all projects and JOIN with user data
     const articleData = await Article.findAll({
       include: [
@@ -23,11 +24,17 @@ router.get('/', async (req, res) => {
       ],
     });
 
+    console.log("\n\narticleData")
+    console.log(articleData)
+
     // Serialize data so the template can read it
     const articles = articleData.map((article) => article.get({ plain: true }));
 
-    consoln.log("\n\narticles.Comments");
-    console.log(articles[0].Comments[0].User.name);
+    console.log("\n\narticle")
+    console.log(articles)
+
+    //consoln.log("\n\narticles.Comments");
+    //console.log(articles[0].Comments[0].User.name);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       articles, 
@@ -45,18 +52,6 @@ router.get('/article/:id', async (req, res) => {
     const articleData = await Article.findByPk(req.params.id, {
       include: [ User, { model: Comment, include: [User]} ]
     });
-//      include: [ {model: User, attributes: ['n]ame'}, {model: Comment, attributes: ['text'] }],
-    //});
-
-    /*
-     include: [
-        User,
-        {
-          model: Comment,
-          include: [User],
-        },
-      ],
-    */
 
     const article = articleData.get({ plain: true });
 
@@ -75,7 +70,7 @@ router.get('/article/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.userId, {
       attributes: { exclude: ['password'] },
       include: [{ model: Article }],
     });
@@ -102,9 +97,9 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', async (req, res) => {
-  console.log("dashboard req.session.user_id", req.session.user_id);
+  console.log("dashboard req.session.userId", req.session.userId);
   try {
-    const user = await User.findOne({where: {id: req.session.user_id }
+    const user = await User.findOne({where: {id: req.session.userId }
     });
     //const user = userData.map((user) => user.get({ plain: true }));
 
@@ -114,7 +109,7 @@ router.get('/dashboard', async (req, res) => {
 
     // Get all projects and JOIN with user data
     //const project = await Project.findOne({ where: { title: 'My Title' } });
-    const articleData = await Article.findAll({ where: { user_id: req.session.user_id }
+    const articleData = await Article.findAll({ where: { userId: req.session.userId }
     });
 
     // Serialize data so the template can read it

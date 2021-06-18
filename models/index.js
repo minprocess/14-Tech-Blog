@@ -2,7 +2,6 @@ const User = require('./User');
 const Article = require('./Article');
 const Comment = require('./Comment');
 
-
 Article.belongsTo(User, {
  foreignKey: 'userId'
 });
@@ -15,37 +14,6 @@ Comment.belongsTo(User, {
  foreignKey: 'userId'
 });
 
-
-/*
-// One user to many articles
-User.hasMany(Article, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
-Article.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
-// One user to many comments
-User.hasMany(Comment, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
-Comment.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
-// One article has many comments
-Article.hasMany(Comment, {
-  foreignKey: 'article_id',
-  onDelete: 'CASCADE'
-});
-Comment.belongsTo(Article, {
-  foreignKey: 'article_id'
-})
-*/
-
-//post has many comments
 /*
 https://blog.agney.dev/sequelize-associations/
 To create associations, we have to use combinations of these together:
