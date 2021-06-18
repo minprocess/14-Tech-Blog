@@ -13,14 +13,10 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
     },
-    article_id: {
+    articleId: {
       type: DataTypes.INTEGER,
     },
   },

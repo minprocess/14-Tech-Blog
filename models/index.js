@@ -2,7 +2,7 @@ const User = require('./User');
 const Article = require('./Article');
 const Comment = require('./Comment');
 
-/*
+
 Article.belongsTo(User, {
  foreignKey: 'user_id'
 });
@@ -14,8 +14,9 @@ Article.hasMany(Comment, {
 Comment.belongsTo(User, {
  foreignKey: 'user_id'
 });
-*/
 
+
+/*
 // One user to many articles
 User.hasMany(Article, {
   foreignKey: 'user_id',
@@ -42,7 +43,7 @@ Article.hasMany(Comment, {
 Comment.belongsTo(Article, {
   foreignKey: 'article_id'
 })
-
+*/
 
 //post has many comments
 /*
