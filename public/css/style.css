@@ -26,20 +26,15 @@ header, .article:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
 
-nav {
+header {
   background: var(--dark);
-  height: 80px;
   width: 100%;
+  padding: 13px;
 }
 
 nav ul {
-  float:right;
+  float:left;
   margin-right: 20px;
 }
 
@@ -53,4 +48,18 @@ nav ul li a {
   color:white;
   font-size: 17px;
   text-transform: uppercase;
+}
+
+header h2 {
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 5px 10px;
+  display: inline;
+  margin: 20px;
+  border-radius:5px;
+  box-shadow: 8px 8px gray;
+}
+
+.tech-brand {
+
 }

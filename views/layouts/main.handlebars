@@ -10,15 +10,11 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Tech Talk</a>
-      </h1>
-      <nav>
+  <div class="container">
+    <header >
+      <nav class="display-flex justify-space-between align-center p-2">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
 
           <!-- Conditionally render login or logout links -->
@@ -30,6 +26,9 @@
         </ul>
 
       </nav>
+      
+      <h2 class="tech-brand">The Tech Blog</h2>
+      <br>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->

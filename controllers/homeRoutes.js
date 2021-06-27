@@ -52,8 +52,31 @@ router.get('/article/:id', async (req, res) => {
     const articleData = await Article.findByPk(req.params.id, {
       include: [ User, { model: Comment, include: [User]} ]
     });
+/*
+    // Get all projects and JOIN with user data
+    const articleData = await Article.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name']
+        },
+        { model: Comment,
+          attributes:['text'], 
+          include: [
+            {
+              model:User, 
+              attributes:['name']
+            }
+          ]
+        }
+      ],
+    });
 
+*/
     const article = articleData.get({ plain: true });
+
+    console.log("...article");
+    console.log(article);
 
     res.render('article', {
       ...article,
@@ -114,6 +137,7 @@ router.get('/dashboard', async (req, res) => {
 
     // Serialize data so the template can read it
     const articles = articleData.map((article) => article.get({ plain: true }));
+    
     console.log("\n");
     console.log("\n");
     console.log("articles")
