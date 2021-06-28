@@ -14,7 +14,7 @@ To seed the database on the development PC use one of the following commands
 `npm start seeds/index.js`
 
 To seed the database on Heroku use this command  
-`heroku run node --tracewarnings seeds/seed.js`
+`heroku run node seeds/seed.js`
 
 To start this server on Heroku, click the Start App button in the page f
 https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql
@@ -37,21 +37,17 @@ git push heroku main
 ````
 <br>
 <br>
-![Data model showing relationships between articles, users and comments](/assets/data-model.png)
-<br>
-<br>
-![homepage](/assets/homepage-snapshot.png)  
-<br>
-<br>
-![Dashboard of Xandromus with his posts](/assets/dashboard-of-Xandromus.png)
-<br>
-<br>
-![article 1](/assets/article-1-page-snapshot.png)  
 
+![Data model showing relationships between articles, users and comments](./assets/data-model.png)
+<br>
+<br>  
 
+![homepage](./assets/homepage-snapshot.png)  
+<br>
+<br>
 
-https://devcenter.heroku.com/articles/renaming-apps
-You can run the following commands to update the remote’s details in other repository instances:
+![Dashboard of Xandromus with his posts](./assets/dashboard-of-Xandromus.png)
+<br>
+<br>
 
-git remote rm heroku
-heroku git:remote -a newname
+![article 1](./assets/article-1-page-snapshot.png)  
