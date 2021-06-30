@@ -1,9 +1,9 @@
 <!-- <div class="text-center"> -->
   <div class="card">
     <div class="card-header">
-      <div style="float:left;">
+      <!-- <div style="float:left;"> -->
         <h3 style="color: var(--primary)">{{title}}</h3>
-      </div>
+      <!-- </div> -->
 
       <div style="float:right;">
         <h4 style="float:right; color: var(--primary)">{{User.name}}</h4>
@@ -22,13 +22,13 @@
         <!-- <div style="border-color:aquamarine; border-width: medium; border-style: solid;"> -->
         <div class="card-body">
           <p>{{comment.text}}</p>
-          <p>{{comment.User.name}}  {{format_date comment.date_created}} </p>
+          <p>{{comment.User.name}}  {{comment.date_created}} </p>
         </div>
       </div>
     </div>
   {{/each}}
 
-  <!-- <p>Created by {{user.name}} on {{format_date date_created}}</p> -->
+  <!-- <p>Created by {{user.name}} on {{date_created}}</p> -->
   <!-- <p>{{comments}}</p> -->
 <!-- </div> -->
 
