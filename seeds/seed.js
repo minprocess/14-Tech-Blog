@@ -13,7 +13,7 @@ const seedAll = async () => {
   catch (err) {
     console.log("sequelize.sync err");
     console.log(err);
-    process.exit(0);
+    process.exitCode = 1;
   }
 
   await seedUsers();
@@ -25,8 +25,6 @@ const seedAll = async () => {
 
   await seedComments();
   console.log('\n----- COMMENTS SEEDED -----\n');
-
-  process.exit(0);
 };
 
 seedAll();

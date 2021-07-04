@@ -5,7 +5,7 @@
     <h2>
       <a href="/article/{{article.id}}">{{article.title}}</a>
     </h2>
-    <p>Created by {{article.user.name}} on {{article.date_created}}</p>
+    <p>Created by {{article.user.name}} on {{format_date article.date_created}}</p>
     <!--
     <div style="border-color: grey; background-color: #ffc7e3">
       {{#each article.Comments as |comment| }}

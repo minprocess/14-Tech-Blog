@@ -2,10 +2,10 @@ const newFormHandler = async (event) => {
   console.log("dashbord.js newFormHandler");
   event.preventDefault();
 
-  const name = document.querySelector('#article-title').value.trim();
+  const title = document.querySelector('#article-title').value.trim();
   const text = document.querySelector('#article-text').value.trim();
 
-  if (name && needed_funding && description) {
+  if (name && text) {
     const response = await fetch(`/api/articles`, {
       method: 'POST',
       body: JSON.stringify({ title, text }),

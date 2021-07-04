@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers, extname: 'hbs' });
 
 const sess = {
   secret: 'Super secret secret',
@@ -32,12 +32,14 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 */
 //Change extension .handlebars to .hbs
-app.engine('hbs', exphbs( {extname: 'hbs' }));
+app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+console.log("server.js __dirname", __dirname);
 
 app.use(routes);
 
