@@ -1,4 +1,5 @@
 const newFormHandler = async (event) => {
+  console.log("dashbord.js newFormHandler");
   event.preventDefault();
 
   const name = document.querySelector('#article-title').value.trim();
@@ -14,7 +15,9 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      console.log("dashbord.js newFormHandler doc.loc.replace('/dashboard'");
+
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to create article');
     }
@@ -30,7 +33,8 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      console.log("dashbord.js delButtonHandler doc.loc.replace('/dashboard'");
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to delete article');
     }

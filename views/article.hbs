@@ -28,7 +28,21 @@
     </div>
   {{/each}}
 
-  <!-- <p>Created by {{user.name}} on {{date_created}}</p> -->
-  <!-- <p>{{comments}}</p> -->
-<!-- </div> -->
+  <div class="card">
+    <div class="card-header">
+      <!-- <div style="float:left;"> -->
+        <!-- <h3 style="color: var(--primary)">{{title}}</h3> -->
+      <!-- </div> -->
 
+      <div style="float:right;">
+        <!-- <h4 style="float:right; color: var(--primary)">{{User.name}}</h4> -->
+      </div>
+    </div>
+    <div class="card-body">
+      <label for="comment">Comment:</label>
+      <textarea class="form-textarea" id="comment" placeholder="Great article!"></textarea>
+      <!-- When this element is in a :focus state, the CSS `outline` property should be applied -->
+      <button style="width: 100%; padding: 1em 2em; font-size: 1.2rem;">Submit</button>
+      <!-- {{text}} -->
+    </div>
+  </div>

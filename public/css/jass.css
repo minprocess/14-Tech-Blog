@@ -1197,15 +1197,31 @@ a:hover {
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
   
+  .comment-header {
+    color: var(--primary);
+    background-color: var(--dark);
+    /*padding: 2.5%;*/
+    border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+  }
+  
   .card-body {
     padding: 2.5%;
   }
   
   /* FORM */
   .form-label,
-  .form-input,
+  .form-input {
+    display: block;
+  }
+
   .form-textarea {
     display: block;
+    width: 100%;
+    padding: 0.5em;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    border: 2px solid var(--light-dark);
+    border-radius: var(--border-radius);
   }
   
   .form-label {
@@ -1231,6 +1247,7 @@ label form [type='checkbox'], label
 form [type='radio'] {
   display: inline-block;
 }
+
 
 .container {
   width: 85%;
