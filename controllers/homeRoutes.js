@@ -24,13 +24,10 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    console.log("\n\narticleData")
-    console.log(articleData)
-
     // Serialize data so the template can read it
     const articles = articleData.map((article) => article.get({ plain: true }));
 
-    console.log("\n\narticle")
+    console.log("\n\nhomeroutes.js  req.session.logged_in")
     console.log(articles)
 
     //consoln.log("\n\narticles.Comments");
@@ -122,6 +119,13 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+// Can only get here from login dialog
+router.get('/signup', (req, res) => {
+  console.log("homeroutes.js .get('/signup'");
+
+  res.render('signup');
 });
 
 router.get('/dashboard', async (req, res) => {
