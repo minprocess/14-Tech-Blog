@@ -18,11 +18,18 @@
           <li><a href="/dashboard">Dashboard</a></li>
 
           <!-- Conditionally render login or logout links -->
+
+
           {{#if logged_in}}
+            <li id="logout" style="font-size:17px; color:white;">logout</li>
+
+          <!--
             <li> <button class="no-button" id="logout">logout</button> </li>
+            -->
           {{else}}
             <li><a href="/login">login</a></li>
           {{/if}}
+
         </ul>
 
       </nav>
