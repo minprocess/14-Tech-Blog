@@ -89,10 +89,10 @@ router.get('/article/:id', async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   console.log("homeroutes.js .get('/profile'");
-
+/*
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.userId, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Article }],
     });
@@ -106,6 +106,7 @@ router.get('/profile', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  */
 });
 
 router.get('/login', (req, res) => {
@@ -129,9 +130,61 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/dashboard', async (req, res) => {
-  console.log("homeroutes.js .get('/dashboard' req.session.userId", req.session.userId);
+  console.log("homeroutes.js .get('/dashboard' req.session.user_id", req.session.user_id);
   try {
-    const user = await User.findOne({where: {id: req.session.userId }
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Article }],
+    });
+/*
+    const userData = await User.findOne(
+      {where: {id: req.session.user_id },
+      include: [{ model: Article }],
+    });
+    */
+    console.log("userData");
+    console.log(userData);
+    const user = userData.map((user) => user.get({ plain: true }));
+    console.log("user");
+    console.log(user);
+
+/*
+    let username = user.name
+    console.log("user")
+    console.log(username)
+
+    // Get all projects and JOIN with user data
+    //const project = await Project.findOne({ where: { title: 'My Title' } });
+    const articleData = await Article.findAll({ where: { user_id: req.session.user_id }
+    });
+
+    // Serialize data so the template can read it
+    const articles = articleData.map((article) => article.get({ plain: true }));
+    
+    console.log("\n");
+    console.log("\n");
+    console.log("articles")
+    console.log(articles)
+*/
+    // Pass serialized data and session flag into template
+    res.render('dashboard1');
+    /*
+    res.render('dashboard', { 
+      articles, username
+    });
+    */
+  } catch (err) {
+    console.log("err");
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/yyydashboard', async (req, res) => {
+  console.log("homeroutes.js .get('/dashboard' req.session.user_id", req.session.user_id);
+  try {
+    const user = await User.findOne({where: {id: req.session.user_id }
     });
     //const user = userData.map((user) => user.get({ plain: true }));
 
@@ -141,7 +194,7 @@ router.get('/dashboard', async (req, res) => {
 
     // Get all projects and JOIN with user data
     //const project = await Project.findOne({ where: { title: 'My Title' } });
-    const articleData = await Article.findAll({ where: { userId: req.session.userId }
+    const articleData = await Article.findAll({ where: { user_id: req.session.user_id }
     });
 
     // Serialize data so the template can read it
@@ -153,9 +206,14 @@ router.get('/dashboard', async (req, res) => {
     console.log(articles)
 
     // Pass serialized data and session flag into template
+    res.render('dashboard1', { 
+      articles, username
+    });
+    /*
     res.render('dashboard', { 
       articles, username
     });
+    */
   } catch (err) {
     console.log("err");
     console.log(err);

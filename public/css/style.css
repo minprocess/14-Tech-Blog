@@ -8,7 +8,12 @@
 }
 
 header, .article:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0px solid #ccc;
+}
+
+main {
+  margin: 0px auto;
+  width: 100%;
 }
 
 .no-button {
@@ -34,13 +39,15 @@ header {
 }
 
 nav ul {
-  float:left;
-  margin-right: 20px;
+  float: left;
+  /*margin-right: 20px;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 nav ul li {
   display: inline-block;
-  line-height: 80px;
+  line-height: 20px;
   margin: 0 5px;
 }
 
@@ -61,5 +68,11 @@ header h2 {
 }
 
 .tech-brand {
-
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 0px 10px;
+  display: inline;
+  /*margin: 20px;*/
+  border-radius:5px;
+  box-shadow: 8px 8px gray;
 }

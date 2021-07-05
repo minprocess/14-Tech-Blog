@@ -17,12 +17,20 @@ Article.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    userId: {
+    user_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
   },
   {
     sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'article',
   }
 );
 

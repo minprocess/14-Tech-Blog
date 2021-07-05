@@ -3,15 +3,15 @@ const Article = require('./Article');
 const Comment = require('./Comment');
 
 Article.belongsTo(User, {
- foreignKey: 'userId'
+ foreignKey: 'user_id'
 });
 
 Article.hasMany(Comment, {
- foreignKey: 'articleId'
+ foreignKey: 'article_id'
 });
 
 Comment.belongsTo(User, {
- foreignKey: 'userId'
+ foreignKey: 'user_id'
 });
 
 /*
