@@ -111,7 +111,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   console.log("homeroutes.js .get('/dashboard' req.session.user_id", req.session.user_id);
   try {
     // Find the logged in user based on the session ID
-    /*
+/*    
     const userData2 = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Article }],

@@ -1,37 +1,20 @@
-<!--
-  <div class="container">
-    <header >
-      <nav class="display-flex justify-space-between align-center">
-        <ul>
-          <li class="tech-brand">The Tech Blog</li>
-        </ul>
-      </nav>
-    </header>
-  </div>
--->
 <div style="background-color: var(--dark); width: 100%; padding: 20px 0px;">
   <h2 class="tech-brand">The Tech Blog</h2>
 </div>
 
-
-<!-- Loop over each object in the articles array -->
-{{#each articles as |article| }}
-<div class="row mb-4 article">
-  <div class="col-md-8">
-    <h2>
-      <a href="/article/{{article.id}}">{{article.title}}</a>
-    </h2>
-    <p>Created by {{article.user.name}} on {{format_date article.date_created}}</p>
-    <!--
-    <div style="border-color: grey; background-color: #ffc7e3">
-      {{#each article.Comments as |comment| }}
-      <div style="border-color:aquamarine; border-width: medium; border-style: solid;">
-        <p>{{comment.text}}</p>
-        <p>{{comment.User.name}}</p>
+{{#if articles.length}}
+    <!-- Loop over each object in the articles array -->
+  {{#each articles as |article| }}
+    <div class="card">
+      <div class="card-header">
+        <h3 style="color: #ccdad1; display: inline;">{{title}}</h3>
+        <div style="float:right; display: inline;">
+          <h4 style="color: var(--primary)">Posted by {{user.name}}  {{format_date date_created}})</h4>
+        </div>
       </div>
-      {{/each}}
+      <div class="card-body">
+        {{text}}
+      </div>
     </div>
-    -->
-  </div>
-</div>
-{{/each}}
+  {{/each}}
+{{/if}}

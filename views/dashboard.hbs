@@ -1,25 +1,28 @@
-      <h2 class="tech-brand">Dashboard</h2>
-  {{#if articles.length}}
-  <div class="col-md-6 article-list">
+<div style="background-color: var(--dark); width: 100%; padding: 20px 0px; margin-bottom: 15px">
+  <h2 class="tech-brand">Your Dashboard</h2>
+</div>
+
+{{#if articles.length}}
+  <!-- <div class="col-md-6 article-list"> -->
 
     {{#each articles as |article|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/article/{{article.id}}">{{article.title}}</a></h4>
-      </div>
+    <!-- <div class="row mb-4 article"> -->
+      <!-- <div class="col-md-8"> -->
+        <h4 class="article-button"><a href="/article/{{article.id}}">{{article.title}}</a></h4>
+      <!-- </div> -->
       <!--
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{article.id}}">DELETE</button>
       </div>
       -->
-    </div>
+    <!-- </div> -->
     {{/each}}
-  </div>
-  {{/if}}
+  <!-- </div> -->
+{{/if}}
 
 
 <div>
-  <button class="btn btn-lg" id="new-poast">+ New Post</button>
+  <button class="btn btn-lg" id="new-post">+ New Post</button>
 </div>
 
 <script src="./js/dashboard.js"></script>

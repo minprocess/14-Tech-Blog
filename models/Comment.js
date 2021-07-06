@@ -13,12 +13,6 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      },
-    article_id: {
-      type: DataTypes.INTEGER,
-      },
   },
   {
     sequelize,
