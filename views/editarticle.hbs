@@ -8,46 +8,28 @@
 <p>id  {{id}}</p>
 
 <div class="container">
-<p>{{title}}</p>
-  <div class="card">
-    <div class="card-header">
+    <p>{{title}}</p>
+    <div class="card">
+      <div class="card-header">
         <h3 style="color: var(--primary)">Edit Article</h3>
-    </div>
-
-
-    <form class="form update-article-form">
-      <div class="form-group">
-        <label class="updateform-label" for="update-title" style="font-size: 150%">Title</label>
-        <input class="updateform-input" value="{{title}}" type="text" id="update-title" />
       </div>
-      <div class="form-group">
-        <label class="updateform-label" for="update-text" style="font-size:150%">Content</label>
-        <input class="updateform-input" value="{{text}}" type="textarea" id="update-text" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit" data-id="{{id}}"">Update Article</button>
-      </div>
-    </form>
 
-<!--
-    <div class="card-body">
-        <h4>Title</h4>
-        <p>{{title}}</p>
-        <h4>Content</h4>
-        <div>
-            <textarea>{{text}}</textarea>
+      <form class="form update-article-form">
+        <div class="form-group">
+          <label class="updateform-label" for="update-title" style="font-size: 150%">Title</label>
+          <input class="updateform-input" value="{{title}}" type="text" id="update-title" />
         </div>
-    </div>
+        <div class="form-group">
+          <label class="updateform-label" for="update-text" style="font-size:150%">Content</label>
+          <input class="updateform-input" value="{{text}}" type="textarea" id="update-text" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit" data-id="{{id}}">Update Article</button>
+        </div>
+      </form>
 
-    <div>
-        <button class="btn btn-lg" >Update Article</button>
-    </div>
-
-
-    <div>
-        <button class="btn btn-lg btn-danger" >Delete</button>
-    </div>
--->
 
   </div>
 </div>
+
+<script src="./js/dashboard.js"></script>
