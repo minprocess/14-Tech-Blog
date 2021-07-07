@@ -7,11 +7,28 @@
 </div>
 
 <div class="container">
-
+<p>{{title}}</p>
   <div class="card">
     <div class="card-header">
         <h3 style="color: var(--primary)">Edit Article</h3>
     </div>
+
+
+    <form class="updateform update-form">
+      <div class="form-group">
+        <label class="updateform-label" for="title-text" style="font-size: 150%">Title</label>
+        <input class="updateform-input" value="{{title}}" type="text" id="title-text" />
+      </div>
+      <div class="updateform-group">
+        <label class="updateform-label" for="content" style="font-size:150%">Content</label>
+        <input class="updateform-input" value="{{text}}" type="textarea" id="content" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Update Article</button>
+      </div>
+    </form>
+
+<!--
     <div class="card-body">
         <h4>Title</h4>
         <p>{{title}}</p>
@@ -29,7 +46,7 @@
     <div>
         <button class="btn btn-lg btn-danger" >Delete</button>
     </div>
-
+-->
 
   </div>
 </div>

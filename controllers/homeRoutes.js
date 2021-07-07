@@ -91,10 +91,23 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/editarticle/:id', withAuth, async (req, res) => {
+  try {
+    const articleData = await Article.findByPk(req.params.id, {
+      include: [ User, { model: Comment, include: [User]} ]
+    });
+
+    const article = articleData.get({ plain: true });
+
     // Pass serialized data and session flag into template
-    const title = "title this article";
-    const text = "text this article";
-    res.render('editarticle', {title, text});
+    //const title = article.title;
+    //const text = article.text;
+    res.render('editarticle', {
+      ...article });
+  } catch(err) {
+    console.log("err");
+    console.log(err)
+    res.status(500).json(err);
+  }
 });
 
 // Use withAuth middleware to prevent access to route
