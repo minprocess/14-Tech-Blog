@@ -2,24 +2,14 @@
   <h2 class="tech-brand">Your Dashboard</h2>
 </div>
 
+<!-- Show only the article title, which is a link to a page for editing that article/post -->
 {{#if articles.length}}
-  <!-- <div class="col-md-6 article-list"> -->
-
-    {{#each articles as |article|}}
-    <!-- <div class="row mb-4 article"> -->
-      <!-- <div class="col-md-8"> -->
-        <h4 class="article-button"><a href="/article/{{article.id}}">{{article.title}}</a></h4>
-      <!-- </div> -->
-      <!--
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{article.id}}">DELETE</button>
-      </div>
-      -->
-    <!-- </div> -->
+  {{#each articles as |article|}}
+    <div class="container">
+        <h4 class="article-button"><a href="/editarticle/{{article.id}}">{{article.title}}</a></h4>
+    </div>
     {{/each}}
-  <!-- </div> -->
 {{/if}}
-
 
 <div>
   <button class="btn btn-lg" id="new-post">+ New Post</button>

@@ -1,3 +1,7 @@
+// homeRoutes.js
+// These routines are responsible for rendering the handlebar pages such
+// as homepage.hbs, newpost.hbs, dashboard.hbs and so on
+
 const router = require('express').Router();
 const { Article, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
@@ -49,27 +53,7 @@ router.get('/article/:id', async (req, res) => {
     const articleData = await Article.findByPk(req.params.id, {
       include: [ User, { model: Comment, include: [User]} ]
     });
-/*
-    // Get all projects and JOIN with user data
-    const articleData = await Article.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name']
-        },
-        { model: Comment,
-          attributes:['text'], 
-          include: [
-            {
-              model:User, 
-              attributes:['name']
-            }
-          ]
-        }
-      ],
-    });
 
-*/
     const article = articleData.get({ plain: true });
 
     console.log("...article");
@@ -106,19 +90,19 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/editarticle/:id', withAuth, async (req, res) => {
+    // Pass serialized data and session flag into template
+    const title = "title this article";
+    const text = "text this article";
+    res.render('editarticle', {title, text});
+});
+
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   console.log("homeroutes.js .get('/dashboard' req.session.user_id", req.session.user_id);
   try {
     // Find the logged in user based on the session ID
-/*    
-    const userData2 = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Article }],
-    });
-    console.log("/n/n .get('/dashboard' userData");
-    console.log(userData2);
-*/
+
     const userData = await User.findOne(
       {where: {id: req.session.user_id },
     });
@@ -130,19 +114,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     console.log("/n/n user");
     console.log(user);
     let username = user.name
-/*
 
-    console.log("user")
-    console.log(username)
-
-    // Get all projects and JOIN with user data
-    //const project = await Project.findOne({ where: { title: 'My Title' } });
-    
-    console.log("\n");
-    console.log("\n");
-    console.log("articles")
-    console.log(articles)
-*/
     const articleData = await Article.findAll({ where: { user_id: req.session.user_id }
     });
 

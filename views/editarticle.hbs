@@ -1,0 +1,35 @@
+<!-- User got here by clicking on an article title in the list of articles in dashboard.hbs -->
+<!-- Show title and content, both are editable, and 1 buttons, Update -->
+<!-- Card title should say Edit Article -->
+
+<div style="background-color: var(--dark); width: 100%; padding: 20px 0px; margin-bottom: 15px">
+  <h2 class="tech-brand">Your Dashboard</h2>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="card-header">
+        <h3 style="color: var(--primary)">Edit Article</h3>
+    </div>
+    <div class="card-body">
+        <h4>Title</h4>
+        <p>{{title}}</p>
+        <h4>Content</h4>
+        <div>
+            <textarea>{{text}}</textarea>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn-lg" >Update Article</button>
+    </div>
+
+
+    <div>
+        <button class="btn btn-lg btn-danger" >Delete</button>
+    </div>
+
+
+  </div>
+</div>

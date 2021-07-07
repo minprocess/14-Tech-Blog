@@ -15,6 +15,20 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// When user clicks Update Article call this to give 
+router.put('/', withAuth, async (req, res) => {
+  try {
+    const updatedArticle = await Article.update({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(updatedArticle);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const articleData = await Article.destroy({
