@@ -17,6 +17,9 @@ router.post('/', withAuth, async (req, res) => {
 
 // When user clicks Update Article call this to give 
 router.put('/', withAuth, async (req, res) => {
+  console.log("articleRoutes.js .put('/'")
+  console.log(req.body)
+  /*
   try {
     const updatedArticle = await Article.update({
       ...req.body,
@@ -27,6 +30,7 @@ router.put('/', withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+  */
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
