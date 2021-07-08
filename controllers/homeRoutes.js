@@ -98,11 +98,13 @@ router.get('/editarticle/:id', withAuth, async (req, res) => {
 
     const article = articleData.get({ plain: true });
 
-    // Pass serialized data and session flag into template
-    //const title = article.title;
-    //const text = article.text;
+    const id = article.id;
+    const title = article.title;
+    const text = article.text;
+    const logged_in = true;
     res.render('editarticle', {
-      ...article });
+      id, title, text, logged_in
+     });
   } catch(err) {
     console.log("err");
     console.log(err)
@@ -119,13 +121,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userData = await User.findOne(
       {where: {id: req.session.user_id },
     });
-    console.log("/n/n .get('/dashboard' userData");
-    console.log(userData);
 
     const user = userData.get({ plain: true });
-    //const user = userData.map((user) => user.get({ plain: true }));
-    console.log("/n/n user");
-    console.log(user);
     let username = user.name
 
     const articleData = await Article.findAll({ where: { user_id: req.session.user_id }

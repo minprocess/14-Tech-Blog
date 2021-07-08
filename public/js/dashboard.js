@@ -28,7 +28,7 @@ const newFormHandler = async (event) => {
 console.log("articleRoutes.js addEventListener")
 
 document
-  .querySelector('.new-article-form')
+  .querySelector('#new-post')
   .addEventListener('submit', newFormHandler);
 
 
