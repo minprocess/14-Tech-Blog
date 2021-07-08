@@ -1,5 +1,10 @@
 
-const newFormHandler = async (event) => {
+const newArticleHandler = async (event) => {
+  document.location.replace('/dashboard');
+}
+
+
+const newFormHandler2 = async (event) => {
   console.log("dashbord.js newFormHandler");
   event.preventDefault();
 
@@ -25,10 +30,10 @@ const newFormHandler = async (event) => {
   }
 };
 
-console.log("articleRoutes.js addEventListener")
+console.log("public dashboard.js addEventListener")
 
 document
   .querySelector('#new-post')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('click', newFormHandler2);
 
 

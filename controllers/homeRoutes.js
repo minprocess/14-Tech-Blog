@@ -8,7 +8,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    console.log("homeroutes.js get('/'")
     // Get all projects and JOIN with user data
     const articleData = await Article.findAll({
       include: [
@@ -30,9 +29,6 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const articles = articleData.map((article) => article.get({ plain: true }));
-
-    console.log("\n\nhomeroutes.js  req.session.logged_in")
-    console.log(articles)
 
     //consoln.log("\n\narticles.Comments");
     //console.log(articles[0].Comments[0].User.name);
@@ -56,9 +52,6 @@ router.get('/article/:id', async (req, res) => {
 
     const article = articleData.get({ plain: true });
 
-    console.log("...article");
-    console.log(article);
-
     res.render('article', {
       ...article,
       logged_in: req.session.logged_in
@@ -71,11 +64,9 @@ router.get('/article/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  console.log("homeroutes.js .get('/login'");
 
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    console.log("homeroutes.js .get('/login' res.redirect('/dashboard',")
     res.redirect('/dashboard');
     return;
   }
@@ -90,6 +81,10 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/newarticle', withAuth, async (req, res) => {
+  res.render('newarticle')
+});
+
 router.get('/editarticle/:id', withAuth, async (req, res) => {
   try {
     const articleData = await Article.findByPk(req.params.id, {
@@ -101,9 +96,8 @@ router.get('/editarticle/:id', withAuth, async (req, res) => {
     const id = article.id;
     const title = article.title;
     const text = article.text;
-    const logged_in = true;
     res.render('editarticle', {
-      id, title, text, logged_in
+      id, title, text, logged_in: true
      });
   } catch(err) {
     console.log("err");
@@ -114,27 +108,26 @@ router.get('/editarticle/:id', withAuth, async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
-  console.log("homeroutes.js .get('/dashboard' req.session.user_id", req.session.user_id);
   try {
     // Find the logged in user based on the session ID
 
     const userData = await User.findOne(
-      {where: {id: req.session.user_id },
+      {where: {id: req.session.user_id }
     });
 
     const user = userData.get({ plain: true });
     let username = user.name
 
-    const articleData = await Article.findAll({ where: { user_id: req.session.user_id }
+    const articleData = await Article.findAll(
+      {where: { user_id: req.session.user_id }
     });
 
     // Serialize data so the template can read it
     const articles = articleData.map((article) => article.get({ plain: true }));
-    console.log(articles);
     
     // Pass serialized data and session flag into template
     res.render('dashboard', { 
-      articles, username
+      articles, username, logged_in: true
     });
 
   } catch (err) {

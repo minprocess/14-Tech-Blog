@@ -10,36 +10,23 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
     <header >
       <nav class="display-flex justify-space-between align-center">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
-
           <!-- Conditionally render login or logout links -->
-
-
           {{#if logged_in}}
-            <li id="logout" style="font-size:17px; color:white;">logout</li>
-
-          <!--
-            <li> <button class="no-button" id="logout">logout</button> </li>
-            -->
+            <li id="logout" style="font-size:17px; color:white;">LOGOUT</li>
           {{else}}
             <li><a href="/login">login</a></li>
           {{/if}}
-
         </ul>
-
       </nav>
-      
-      <!--
-      <h2 class="tech-brand">The Tech Blog</h2>
-      <br>
-      -->
     </header>
     <main>
+      <p>{{logged_in}}
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>

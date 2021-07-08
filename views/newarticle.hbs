@@ -1,22 +1,29 @@
-<!-- addarticle.hbs -->
+<!-- newarticle.hbs -->
 <!-- User click on an New Article button in in dashboard.hbs to get here -->
-<!-- Show title and content, both are editable, and 2 buttons, update and delete -->
+<!-- Show title and content, both are editable, and 1 buttons, Create -->
 <!-- Card title should say Create New Article -->
-<container>
-    <h3>Create New Post:</h3>
+<div style="background-color: var(--dark); width: 100%; padding: 20px 0px; margin-bottom: 15px">
+  <h2 class="tech-brand">Your Dashboard</h2>
+</div>
 
-    <form class="form new-article-form">
-      <div class="form-group">
-        <label for="article-title">article title:</label>
-        <input class="form-input" type="text" id="article-title" name="article-title" />
-      </div>
-      <div class="form-group">
-        <label for="article-text">description:</label>
-        <textarea class="form-input" id="article-text" name="article-text"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+<div class=container>
+  <div class="card">
+    <div class="card-header">
+        <h3 style="color: var(--primary)">Create New Article</h3>
+    </div>
+    <div="card-body">      
+      <label class="newarticle-label" for="new-title" style="font-size: 150%">Title</label>
+      <input class="newarticle-input" value="{{title}}" type="text" id="new-title" />
 
-</container>
+      <label class="newarticle-label" for="new-text" style="font-size:150%">Content</label>
+      <input class="newarticle-input" type="textarea" id="new-text" />
+
+      <button class="btn btn-primary new-article style="padding:20px 20px; margin-bottom: 20px;" type="button">Create</button>
+    </div>
+  </div>
+  <div>
+    <a href="/newarticle" style="text-decoration: none"><button class="btn btn-lg" type="button">+ New Post</button></a>
+  </div>
+
+</div>
+<script src="./js/newarticle.js"></script>

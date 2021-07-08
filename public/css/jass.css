@@ -1193,7 +1193,7 @@ a:hover {
   .card-header {
     color: var(--primary);
     background-color: var(--dark);
-    padding: 2.5%;
+    padding: 15px 20px;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
   
@@ -1234,6 +1234,20 @@ a:hover {
     padding: 3%;
     margin: 5px 0;
     font-size: 1.2rem;
+    border: 2px solid var(--light-dark);
+    border-radius: var(--border-radius);
+  }
+
+  .newarticle-label {
+    font-size: 150%;
+    margin: 20px 0 0 20px;
+  }
+
+  .newarticle-input {
+    width: 100%;
+    padding: 20px;
+    margin: 20px 20px;
+    font-size: 150%;
     border: 2px solid var(--light-dark);
     border-radius: var(--border-radius);
   }
