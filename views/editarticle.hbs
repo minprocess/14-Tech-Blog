@@ -5,24 +5,22 @@
 <div style="background-color: var(--dark); width: 100%; padding: 20px 0px; margin-bottom: 15px">
   <h2 class="tech-brand">Your Dashboard</h2>
 </div>
-<p>id  {{id}}</p>
 
-
-  <p>{{title}}</p>
-  <div class="card">
-    <div class="card-header">
-      <h3 style="color: var(--primary)">Edit Article</h3>
-    </div>
-
-    <label class="updateform-label" for="update-title" style="font-size: 150%">Title</label>
-    <input class="updateform-input" value="{{title}}" type="text" id="update-title" />
-
-    <label class="updateform-label" for="update-text" style="font-size:150%">Content</label>
-    <input class="updateform-input" value="{{text}}" type="textarea" id="update-text" />
-
-    <button class="btn btn-primary update-article" style="padding:20px 20px; margin-bottom: 20px;" type="button" data-id="{{id}}">Update Article</button>
-    <button class="btn btn-primary delete-article" style="padding:20px 20px;" type="button" data-id="{{id}}">Update Article</button>
-
+<p>{{title}}</p>
+<div class="card">
+  <div class="card-header">
+    <h3 style="color: var(--primary)">Edit Article</h3>
   </div>
+
+  <label class="updateform-label" for="update-title" style="font-size: 150%">Title</label>
+  <input class="updateform-input" value="{{title}}" type="text" id="update-title" />
+
+  <label class="updateform-label" for="update-text" style="font-size:150%">Content</label>
+  <input class="updateform-input" value="{{text}}" type="textarea" id="update-text" />
+
+  <button class="btn btn-primary update-article" style="padding:20px 20px; margin-bottom: 20px;" type="button" data-id="{{id}}">Update Article</button>
+  <button class="btn btn-primary delete-article" style="padding:20px 20px;" type="button" data-id="{{id}}">Update Article</button>
+
+</div>
 
 <script src="/js/editarticle.js"></script>

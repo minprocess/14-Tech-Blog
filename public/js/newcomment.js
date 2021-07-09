@@ -4,16 +4,11 @@
 
 const newCommentFormHandler = async (event) => {
   event.preventDefault();
-  console.log("in newCommentFormHandler")
 
   // id of user that created the original article
   const idCommenter = event.target.getAttribute('data-id');
   const text = document.querySelector('#comment').value.trim();
   const idArticle = document.querySelector('#comment').getAttribute('data-id');
-
-  console.log("idCommenter", idCommenter);
-  console.log("idPoster", idArticle);
-  console.log("text", text);
 
   if (text) {
     const response = await fetch(`/api/comments`, {
@@ -25,7 +20,6 @@ const newCommentFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      console.log("newcomment.js newCommentFormHandler doc.loc.replace('/dashboard'");
       document.location.replace('/dashboard');
     } else {
       alert('Failed to create article');
@@ -33,7 +27,6 @@ const newCommentFormHandler = async (event) => {
   }
 };
 
-console.log("newcomment.js loaded")
 document
 .querySelector('.new-comment')
 .addEventListener('click', newCommentFormHandler);

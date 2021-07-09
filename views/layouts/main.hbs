@@ -18,15 +18,15 @@
           <li><a href="/dashboard">Dashboard</a></li>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            <li id="logout" style="font-size:17px; color:white;">LOGOUT</li>
+            <li><button class="no-button" id="logout" style="font-size:17px; color:white;">LOGOUT</button></li>
+            <!-- <li id="logout" style="font-size:17px; color:white;">LOGOUT</li> -->
           {{else}}
-            <li><a href="/login">login</a></li>
+            <li><a href="/login">LOGIN</a></li>
           {{/if}}
         </ul>
       </nav>
     </header>
     <main>
-      <p>{{logged_in}}
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>

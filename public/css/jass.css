@@ -1266,6 +1266,20 @@ a:hover {
     border-radius: var(--border-radius);
   }
 
+  .loginform-label {
+    font-size: 150%;
+    margin: 20px 0 0 20px;
+  }
+
+  .loginform-input {
+    width: 100%;
+    padding: 20px;
+    margin: 20px 20px;
+    font-size: 150%;
+    border: 2px solid var(--light-dark);
+    border-radius: var(--border-radius);
+  }
+
   form [type='checkbox'],
 form [type='radio'] {
   display: inline-block;
