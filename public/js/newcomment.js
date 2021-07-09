@@ -20,7 +20,9 @@ const newCommentFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      // refresh the page with the new comment in the database
+      document.location.reload();
+      //document.location.replace('/dashboard');
     } else {
       alert('Failed to create article');
     }

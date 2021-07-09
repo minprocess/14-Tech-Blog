@@ -1,15 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// Add a new user to database
+// Add a new user to database using name and password from signin.hbs
 router.post('/', async (req, res) => {
-  console.log("\n\nuserroutes .post('/'")
-  console.log("req.body")
-  console.log(req.body)
   try {
     const userData = await User.create(req.body);
-    console.log("\nuserroutes userData")
-    console.log(userData)
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -22,9 +17,8 @@ router.post('/', async (req, res) => {
   }
 });
 
+// User login from login.hbs
 router.post('/login', async (req, res) => {
-  console.log("\n login req")
-  console.log(req.body)
   try {
     const userData = await User.findOne({ where: { name: req.body.name } });
     const user = userData.get({ plain: true });
@@ -33,10 +27,8 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Incorrect name or password, please try again' });
       return;
     }
-    console.log("user.password", user.password)
-    console.log("req.body.password", req.body.password)
-    //let validPassword = false;
-    //if (user.password === req.body.password) { validPassword = true; }
+
+    // Use this function because req.body.password is encrypted
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -44,6 +36,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // expression-session is going to keep our login id
     req.session.save(() => {
       req.session.user_id = user.id;
       req.session.logged_in = true;

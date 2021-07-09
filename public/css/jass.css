@@ -1205,7 +1205,7 @@ a:hover {
   }
   
   .card-body {
-    padding: 2.5%;
+    padding: 15px 15px;
   }
   
   /* FORM */
@@ -1253,30 +1253,30 @@ a:hover {
   }
 
   .updateform-label {
-    font-size: 150%;
-    margin: 20px 0 0 20px;
+    font-size: large;
+    margin: 15px 15px;
   }
 
   .updateform-input {
-    width: 100%;
-    padding: 20px;
-    margin: 20px 20px;
-    font-size: 150%;
-    border: 2px solid var(--light-dark);
+    width: 95%;
+    padding: 5px;
+    margin: 5px 5px;
+    font-size: larger;
+    border: 0px;
     border-radius: var(--border-radius);
   }
 
   .loginform-label {
-    font-size: 150%;
-    margin: 20px 0 0 20px;
+    font-size: larger;
+    margin: 5px 5px;
   }
 
   .loginform-input {
     width: 100%;
-    padding: 20px;
-    margin: 20px 20px;
-    font-size: 150%;
-    border: 2px solid var(--light-dark);
+    padding: 10px 5px;
+    margin: 5px 5px;
+    font-size: larger;
+    border: 0px;
     border-radius: var(--border-radius);
   }
 
