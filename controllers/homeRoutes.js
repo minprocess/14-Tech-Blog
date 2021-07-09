@@ -51,6 +51,8 @@ router.get('/article/:id', async (req, res) => {
     });
 
     const article = articleData.get({ plain: true });
+    console.log(".get/article/:id article");
+    console.log({...article});
 
     res.render('article', {
       ...article,

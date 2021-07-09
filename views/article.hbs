@@ -2,51 +2,38 @@
   <h2 class="tech-brand">The Tech Blog</h2>
 </div>
 
-
-<!-- <div class="text-center"> -->
-<div class="container">
-
-  <div class="card">
-    <div class="card-header">
-      <!-- <div style="float:left;"> -->
-        <h3 style="color: var(--primary)">{{title}}</h3>
-      <!-- </div> -->
-
-      <div style="float:right;">
-        <h4 style="float:right; color: var(--primary)">{{User.name}}</h4>
-      </div>
+<div class="card">
+  <div class="card-header">
+    <h3 style="color: var(--primary)">{{title}}</h3>
+    <div style="float:right;">
+      <h4 style="float:right; color: var(--primary)">{{user.name}}</h4>
     </div>
-    <div class="card-body">
-      {{text}}
-    </div>
+  </div>
+  <div class="card-body">
+    {{text}}
   </div>
 </div>
 
-  <!-- Show comments if any -->
-  {{#each Comments as |comment| }}
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <!-- <div style="border-color:aquamarine; border-width: medium; border-style: solid;"> -->
-          <div class="card-body">
-            <p>{{comment.text}}</p>
-            <p>{{comment.User.name}}  {{format_date comment.date_created}} </p>
-          </div>
-        </div>
-      </div>
+<!-- Show comments if any -->
+{{#each comments as |comment| }}
+  <div class="card">
+    <div class="card-header">
     </div>
-  {{/each}}
-
-  <!-- Textarea for comment is automatic -->
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-      </div>
-      <div class="card-body">
-        <label for="comment">Comment:</label>
-        <textarea class="form-textarea" id="comment" placeholder="Great article!"></textarea>
-        <!-- When this element is in a :focus state, the CSS `outline` property should be applied -->
-        <button style="width: 100%; padding: 1em 2em; font-size: 1.2rem;">Submit</button>
-      </div>
+    <div class="card-body">
+      <p>{{comment.text}}</p>
+      <p>{{comment.user.name}}  {{format_date comment.date_created}} </p>
     </div>
   </div>
+{{/each}}
+
+<!-- Textarea for comment is automatic -->
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <label for="comment">Comment:</label>
+    <textarea class="form-textarea" id="comment" placeholder="Great article!" data-id="{{id}}"></textarea>
+    <button class="btn btn-primary new-comment" style="padding:20px 20px; margin-bottom: 20px;" type="button" data-id="{{user.id}}">Submit</button>
+  </div>
+</div>
+<script src="/js/newcomment.js"></script>

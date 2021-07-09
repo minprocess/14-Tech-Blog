@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Article } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Add a new post/article
 router.post('/', withAuth, async (req, res) => {
   console.log("articleRoutes.js create a post/article")
   try {
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 // When user clicks Update Article call this to give 
 // https://sequelizedocs.fullstackacademy.com/inserting-updating-destroying/

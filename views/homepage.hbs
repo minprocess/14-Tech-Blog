@@ -5,7 +5,6 @@
 {{#if articles.length}}
     <!-- Loop over each object in the articles array -->
   {{#each articles as |article| }}
-
       <div class="card">
         <div class="card-header">
           <a href="/article/{{id}}"><h3 style="color: #ccdad1; display: inline;">{{title}}</h3></a>
@@ -17,6 +16,5 @@
           {{text}}
         </div>
       </div>
-
   {{/each}}
 {{/if}}

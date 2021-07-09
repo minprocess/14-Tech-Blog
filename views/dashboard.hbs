@@ -5,9 +5,7 @@
 <!-- Show only the article title, which is a link to a page for editing that article/post -->
 {{#if articles.length}}
   {{#each articles as |article|}}
-    <div class="container">
         <h4 class="article-button"><a href="/editarticle/{{article.id}}">{{article.title}}</a></h4>
-    </div>
     {{/each}}
 {{/if}}
 

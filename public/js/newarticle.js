@@ -1,7 +1,6 @@
-// Handler for button clicks in editarticle.hbs
-// update content for Update button
-// delete content for delete button
-// see dashboard.js
+// public/js/newarticle.js
+// Handler on client PC for button clicks in newarticle.hbs
+// add post to database when user click the Create button in newarticle.hbs
 
 const newArticleFormHandler = async (event) => {
   event.preventDefault();
