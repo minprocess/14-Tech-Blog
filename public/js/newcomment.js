@@ -6,14 +6,14 @@ const newCommentFormHandler = async (event) => {
   event.preventDefault();
 
   // id of user that created the original article
-  const idCommenter = event.target.getAttribute('data-id');
+  const user_id = event.target.getAttribute('data-id');
   const text = document.querySelector('#comment').value.trim();
-  const idArticle = document.querySelector('#comment').getAttribute('data-id');
+  const article_id = document.querySelector('#comment').getAttribute('data-id');
 
   if (text) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({ text, idArticle, idCommenter }),
+      body: JSON.stringify({ text, article_id, user_id }),
       headers: {
           'Content-Type': 'application/json',
       },
