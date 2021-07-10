@@ -1248,19 +1248,19 @@ a:hover {
     padding: 20px;
     margin: 20px 20px;
     font-size: 150%;
-    border: 2px solid var(--light-dark);
+    border: 0px solid var(--light-dark);
     border-radius: var(--border-radius);
   }
 
   .updateform-label {
-    font-size: large;
-    margin: 15px 15px;
+    font-size: larger;
+    margin: 10px 10px 7px 10px;
   }
 
   .updateform-input {
     width: 95%;
-    padding: 5px;
-    margin: 5px 5px;
+    padding: 10px;
+    margin: 5px 10px;
     font-size: larger;
     border: 0px;
     border-radius: var(--border-radius);

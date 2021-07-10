@@ -1,3 +1,7 @@
+<!-- homepage.hbs -->
+<!-- Show the title and contents of every article -->
+<!-- User clicked Home to get here -->
+
 <div style="background-color: var(--dark); width: 100%; padding: 20px 0px;">
   <h2 class="tech-brand">The Tech Blog</h2>
 </div>
@@ -8,9 +12,7 @@
       <div class="card">
         <div class="card-header">
           <a href="/article/{{id}}"><h3 style="color: #ccdad1; display: inline;">{{title}}</h3></a>
-          <div style="float:right; display: inline;">
             <h4 style="color: var(--primary)">Posted by {{user.name}}  {{format_date date_created}})</h4>
-          </div>
         </div>
         <div class="card-body">
           {{text}}

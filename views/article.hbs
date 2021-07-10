@@ -1,13 +1,15 @@
+<!-- article.hbs -->
+<!-- Show the article title, content and all comments -->
+<!-- Allow comments to be added -->
+
 <div style="background-color: var(--dark); width: 100%; padding: 20px 0px;">
   <h2 class="tech-brand">The Tech Blog</h2>
 </div>
 
 <div class="card">
   <div class="card-header">
-    <h3 style="color: var(--primary)">{{title}}</h3>
-    <div style="float:right;">
-      <h4 style="float:right; color: var(--primary)">{{user.name}}</h4>
-    </div>
+    <h3 style="color: var(--primary); display: inline;">{{title}}</h3>
+    <h4 style="float:right; color: var(--primary)">{{user.name}}  {{format_date date_created}})</h4>
   </div>
   <div class="card-body">
     {{text}}
