@@ -1,6 +1,11 @@
 # 14-Tech-Blog
 ## Description
-MVC Node Express Server hosting multiple a group blog
+This full stack (back-end and front-end) web site hosts a multi-author blog that allows users to post articles and comments on articles. This web application has a MVC structure based on HTML, CSS, Node, Express and mySql.
+
+This web site is deployed on Heroku at
+https://tech-blog-2542.herokuapp.com/
+
+## Installation
 
 ## Usage
 The following commands deploy to Heroku. Note that the Heroku CLI has to be installed on the PC with source code for this project.  
