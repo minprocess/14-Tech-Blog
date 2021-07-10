@@ -33,9 +33,11 @@
   <div class="card-header">
   </div>
   <div class="card-body">
-    <label for="comment">Comment:</label>
-    <textarea class="form-textarea" id="comment" placeholder="Great article!" data-id="{{id}}"></textarea>
-    <button class="btn btn-primary new-comment" style="padding:20px 20px; margin-bottom: 20px;" type="button" data-id="{{user.id}}">Submit</button>
+    <form>
+      <label class="form-label" for="comment">Comment:</label>
+      <textarea class="form-textarea" id="comment" placeholder="Great article!" data-id="{{id}}"></textarea>
+      <button class="btn btn-primary new-comment" style="padding:20px 20px; margin-bottom: 20px;" type="button" data-id="{{user.id}}">Submit</button>
+    </form>
   </div>
 </div>
 <script src="/js/newcomment.js"></script>

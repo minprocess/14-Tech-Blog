@@ -10,17 +10,16 @@
   <div class="card-header">
     <h3 style="color: var(--primary)">Edit Article</h3>
   </div>
-  <div="card-body">
+  <div class="card-body">
     <form>
-    <label class="updateform-label" for="update-title" style="font-size: larger">Title</label>
-    <input class="updateform-input" value="{{title}}" type="text" id="update-title">
+      <label class="form-label" for="update-title">Title</label>
+      <input class="form-input" value="{{title}}" type="text" id="update-title">
 
-    <label class="updateform-label" for="update-text" style="font-size:larger">Content</label>
-    <textarea class="form-textarea" {{text}} id="update-text">{{text}}</textarea>
-    <!-- <input class="updateform-input" value="{{text}}" type="textarea" id="update-text"> -->
+      <label class="form-label" for="update-text">Content</label>
+      <textarea class="form-textarea" id="update-text">{{text}}</textarea>
 
-    <button class="btn btn-primary update-article" style="padding:15px 20px; margin: 20px 0px;" type="button" data-id="{{id}}">Update Article</button>
-    <button class="btn btn-primary delete-article" style="padding:15px 20px;" type="button" data-id="{{id}}">Delete</button>
+      <button class="btn btn-primary update-article" style="padding: 15px 20px; margin: 20px 0px;" type="button" data-id="{{id}}">Update Article</button>
+      <button class="btn btn-primary delete-article" style="padding: 15px 20px;" type="button" data-id="{{id}}">Delete</button>
     </form>
   </div>
 </div>

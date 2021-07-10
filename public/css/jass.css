@@ -1217,67 +1217,30 @@ a:hover {
   .form-textarea {
     display: block;
     width: 100%;
-    padding: 0.5em;
-    margin: 5px 0;
-    font-size: 1.2rem;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: larger;
     border: 2px solid var(--light-dark);
     border-radius: var(--border-radius);
   }
   
   .form-label {
-    font-size: 1.1rem;
+    font-size: larger;
     margin: 0 0 0 5px;
   }
   
   .form-input {
     width: 100%;
-    padding: 3%;
-    margin: 5px 0;
-    font-size: 1.2rem;
-    border: 2px solid var(--light-dark);
-    border-radius: var(--border-radius);
-  }
-
-  .newarticle-label {
-    font-size: 150%;
-    margin: 20px 0 0 20px;
-  }
-
-  .newarticle-input {
-    width: 100%;
-    padding: 20px;
-    margin: 20px 20px;
-    font-size: 150%;
-    border: 0px solid var(--light-dark);
-    border-radius: var(--border-radius);
-  }
-
-  .updateform-label {
-    font-size: larger;
-    margin: 10px 10px 7px 10px;
-  }
-
-  .updateform-input {
-    width: 95%;
     padding: 10px;
-    margin: 5px 10px;
+    margin: 10px auto;
     font-size: larger;
-    border: 0px;
+    border: 2px solid var(--light-dark);
     border-radius: var(--border-radius);
   }
 
   .loginform-label {
     font-size: larger;
     margin: 5px 5px;
-  }
-
-  .loginform-input {
-    width: 100%;
-    padding: 10px 5px;
-    margin: 5px 5px;
-    font-size: larger;
-    border: 0px;
-    border-radius: var(--border-radius);
   }
 
   form [type='checkbox'],

@@ -11,19 +11,17 @@
     <div class="card-header">
         <h3 style="color: var(--primary)">Create New Article</h3>
     </div>
-    <div="card-body">      
-      <label class="newarticle-label" for="new-title" style="font-size: 150%">Title</label>
-      <input class="newarticle-input" value="{{title}}" type="text" id="new-title" />
+    <div class="card-body">
+      <form>
+        <label class="form-label" for="new-title">Title</label>
+        <input class="form-input" value="{{title}}" type="text" id="new-title" />
 
-      <label class="newarticle-label" for="new-text" style="font-size:150%">Content</label>
-      <input class="newarticle-input" type="textarea" id="new-text" />
+        <label class="form-label" for="new-text">Content</label>
+        <textarea class="form-textarea" id="new-text">{{text}}</textarea>
 
-      <button class="btn btn-primary new-article" style="padding:20px 20px; margin-bottom: 20px;" type="button">Create</button>
+        <button class="btn btn-primary new-article" style="padding:15px 20px; margin-bottom: 20px;" type="button">Create</button>
+      </form>
     </div>
-  </div>
-  
-  <div>
-    <a href="/newarticle" style="text-decoration: none"><button class="btn btn-lg" type="button">+ New Post</button></a>
   </div>
 
 </div>
