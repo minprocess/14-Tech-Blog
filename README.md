@@ -6,8 +6,16 @@ This web site is deployed on Heroku at
 https://tech-blog-2542.herokuapp.com/
 
 ## Installation
+The GitHub repository for this web app is (https://github.com/minprocess/14-Tech-Blog)
+
+After cloning or forking the repo install npm packages with
+npm i
+
+
 
 ## Usage
+
+
 The following commands deploy to Heroku. Note that the Heroku CLI has to be installed on the PC with source code for this project.  
 `heroku create`
 `git push heroku main`

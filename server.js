@@ -11,7 +11,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
+// Set up Handlebars.js engine with custom helpers, namely, format_date
 const hbs = exphbs.create({ helpers, extname: 'hbs' });
 
 const sess = {
@@ -27,11 +27,7 @@ const sess = {
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
-/*
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-*/
-//Change extension .handlebars to .hbs
+// Change extension .handlebars to .hbs
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
