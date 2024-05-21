@@ -22,3 +22,4 @@ console.log("name ",process.env.DB_NAME, ",  user ",
   }
 
   module.exports = sequelize;
+  
