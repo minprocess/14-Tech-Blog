@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seeds/seed.js",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "start:backend": "node server.js",
-    "start:frontend": "cd frontend && npm start"  
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

@@ -1,30 +1,37 @@
 # 14-Tech-Blog
 ## Description
-This full stack (back-end and front-end) web site hosts a multi-author blog that allows users to post articles and comments on articles. This web application has a MVC structure based on HTML, CSS, Node, Express and mySql.
+This full stack (back-end and front-end) web site hosts a multi-author blog that allows users to post articles and comments on articles. This web application has a MVC structure based on HTML, CSS, Node, Handlebars, Express and mySql.
 
 This web site is deployed on Heroku at
 https://tech-blog-2542.herokuapp.com/
 
-## Installation
-The GitHub repository for this web app is (https://github.com/minprocess/14-Tech-Blog)
+This web site was created as a homework assignment for the Penn LPS Coding Boot Camp in 2021. A skeleton was provided by the Boot Camp. Penn LPS is no longer giving the Coding Boot Camp. It has been replace by an AI Boot Camp. Details are given at the following link: https://bootcamp.sas.upenn.edu/
 
-After cloning or forking the repo install npm packages on a command line with  
+## Installation
+The GitHub repository for this web app is https://github.com/minprocess/14-Tech-Blog
+
+After cloning or forking the repository, install npm packages with the following command  
 `npm i`
 
-If you are going to use this app on your own PC you will have to have mySQL installed on your PC. Make a copy of `.env.EXAMPLE` and rename it `.env`. In `.env` you will have to set the database name, password and user. MySQL Workbench is an easy to use interface to mySQL on your PC and to JAWSDB on Heroku.
+If you fork this project on GitHub and don't plan on merging the fork back to the origin then you can detach the forked repository on GitHub as explained in the following link
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/detaching-a-fork
 
-To seed the database on the development PC use one of the following commands  
-`node seeds/index.js`  
-`npm start seeds/index.js`
+If you are going to use this app on your own PC you will have to have MySQL installed on your PC. Installing MySQL Workbench facilitates testing and debuggin
 
-If you are going to deploy this app in your own account on Heroku you will need to add a JAWSDB resource. To seed the database on Heroku use this command after installing Heroku CLI.  
-`heroku run node seeds/seed.js`
+Make a copy of `.env.EXAMPLE` and rename it `.env`. In `.env` you will have to set the database the following connection parameters for the local database: name, password and user. The .env file has comments that tell you how to switch between the local database or the remote database on Heroku. 
 
-To use git to deploy this app to Heroku use the following commands (after installing Heroku CLI).  
+To view the database contents either on your local PC or on Heroku, use MySQL Workbench is an easy to use interface to mySQL on your PC and to JAWSDB on Heroku.
+
+The following article was helpful for me:
+https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql
+
+To seed the database specified by the database in the .env file, use the following command.
+`node seeds/index.js`
+If JAWSDB_URL is set then the blog database will be seeded. If JAWSDB_URL is not set then the local blog database will be seeded.
+
+To use git to deploy this app to Heroku use the following commands after installing Heroku CLI.
 `heroku create`
 `git push heroku main`
-
-This server/backend works with mySQL on the PC or JAWSDB on Heroku.
 
 The file package.json includes some dev packages for ESlint and Prettier. ESlint was run only one time. Only two problems were found. They were corrected. Since then ESlint has not been run.
 
@@ -33,7 +40,9 @@ The file package.json includes some dev packages for ESlint and Prettier. ESlint
 To start the backend on your local PC use the command  
 `node server.js`  
 
-Go to a browser and in the address bar type `localhost:3001`. To run on Heroku, copy/paste the following into a browser address box  
+Go to a browser and in the address bar type `localhost:3001`. 
+
+To run on Heroku, go to the following address  
 `https://tech-blog-2542.herokuapp.com/`  
 
 The schematic below shows the database after user id:2 creates the article id:3 and user id:3 adds a comment. user_id and article_id and foreign keys.  
