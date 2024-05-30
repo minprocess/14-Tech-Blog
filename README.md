@@ -2,10 +2,7 @@
 ## Description
 This full stack (back-end and front-end) web site hosts a multi-author blog that allows users to post articles and comments on articles. This web application has a MVC structure based on HTML, CSS, Node, Handlebars, Express and mySql.
 
-This web site is deployed on Heroku at
-https://tech-blog-2542.herokuapp.com/
-
-This web site was created as a homework assignment for the Penn LPS Coding Boot Camp in 2021. A skeleton was provided by the Boot Camp. Penn LPS is no longer giving the Coding Boot Camp. It has been replace by an AI Boot Camp. Details are given at the following link: https://bootcamp.sas.upenn.edu/
+hThis web site was created as a homework assignment for the Penn LPS Coding Boot Camp in 2021. A skeleton was provided by the Boot Camp. Penn LPS is no longer giving the Coding Boot Camp. It has been replace by an AI Boot Camp. Details are given at the following link: https://bootcamp.sas.upenn.edu/
 
 ## Installation
 The GitHub repository for this web app is https://github.com/minprocess/14-Tech-Blog
@@ -43,7 +40,10 @@ To start the backend on your local PC use the command
 Go to a browser and in the address bar type `localhost:3001`. 
 
 To run on Heroku, go to the following address  
-`https://tech-blog-2542.herokuapp.com/`  
+`https://tech-blog-2542.herokuapp.com/` 
+
+To make sure that only one instance of Wobal is running on Heroku execute the following command
+heroku ps:scale web=1
 
 The schematic below shows the database after user id:2 creates the article id:3 and user id:3 adds a comment. user_id and article_id and foreign keys.  
 
