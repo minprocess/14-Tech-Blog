@@ -43,9 +43,9 @@ To run on Heroku, go to the following address
 `https://tech-blog-2542.herokuapp.com/` 
 
 To make sure that only one instance of Wobal is running on Heroku execute the following command
-heroku ps:scale web=1
+`heroku ps:scale web=1`
 
-The schematic below shows the database after user id:2 creates the article id:3 and user id:3 adds a comment. user_id and article_id and foreign keys.  
+The schematic below shows the database after user id:2 creates the article id:3 and user id:3 adds a comment. user_id and article_id aare foreign keys.  
 
 ![Data model showing relationships between articles, users and comments](./assets/data-model.png)  
 
